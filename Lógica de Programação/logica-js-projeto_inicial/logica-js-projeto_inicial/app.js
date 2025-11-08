@@ -17,9 +17,6 @@ while (chute != numeroSecreto) {
   chute = prompt("Escolha um número entre 1 e 10");
   //realizando uma comparação, usando condição
   if (chute == numeroSecreto) {
-    alert(
-      `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} tentativas`
-    );
   } else {
     if (chute > numeroSecreto) {
       alert(`O número secreto é menor que ${chute}`);
@@ -30,3 +27,17 @@ while (chute != numeroSecreto) {
     tentativas++;
   }
 }
+
+// if (tentativas > 1) {
+//   alert(
+//     `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} tentativas`
+//   );
+// } else {
+//   alert(`Parabéns! Você descobriu o número secreto de primeira!!!`);
+// }
+
+//fazendo da mesma maneira mas mais simples sem tantos ifs
+let palavraTentativa = tentativas > 1 ? "tentantivas" : "tentativa"; // operador ternario: se tentativa for mais que 1 faz uma coisa se não (?) faz outra
+alert(
+  `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} ${palavraTentativa}`
+);
