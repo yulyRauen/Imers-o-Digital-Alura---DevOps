@@ -1,3 +1,5 @@
+let numeroSecreto = gerarNumeroAleatorio();
+
 function exibirTextoNaTela(tag, texto) {
   let campo = document.querySelector(tag);
   campo.innerHTML = texto;
@@ -9,4 +11,9 @@ exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
 //criando uma função para chamar no botão
 function verificarChute() {
   console.log("o botão foi clicado");
+}
+
+//função que não tem parametro e tem retorno
+function gerarNumeroAleatorio() {
+  return parseInt(Math.random() * 10 + 1);
 }
