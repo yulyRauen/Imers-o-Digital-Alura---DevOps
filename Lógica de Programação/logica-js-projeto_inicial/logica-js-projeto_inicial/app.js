@@ -1,7 +1,7 @@
 alert("Boas vindas ao jogo do número secreto!");
 
 //criando uma variável
-let numeroSecreto = 2;
+let numeroSecreto = parseInt(Math.random() * 100 + 1); // faz * 100 porque o número sorteado vem com muitas casas decimais (0.12345) colocando * 100 ele vai mover o ponto para três cas decimais e pegando um numero inteiro para sortear
 
 //deixando o numeroSecreto escondido
 console.log(numeroSecreto);
@@ -14,7 +14,7 @@ let tentativas = 1;
 
 //enquanto chute não for igual ao número secreto
 while (chute != numeroSecreto) {
-  chute = prompt("Escolha um número entre 1 e 10");
+  chute = prompt("Escolha um número entre 1 e 100");
   //realizando uma comparação, usando condição
   if (chute == numeroSecreto) {
   } else {
@@ -28,15 +28,6 @@ while (chute != numeroSecreto) {
   }
 }
 
-// if (tentativas > 1) {
-//   alert(
-//     `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} tentativas`
-//   );
-// } else {
-//   alert(`Parabéns! Você descobriu o número secreto de primeira!!!`);
-// }
-
-//fazendo da mesma maneira mas mais simples sem tantos ifs
 let palavraTentativa = tentativas > 1 ? "tentantivas" : "tentativa"; // operador ternario: se tentativa for mais que 1 faz uma coisa se não (?) faz outra
 alert(
   `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} ${palavraTentativa}`
