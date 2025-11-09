@@ -10,7 +10,9 @@ exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
 
 //criando uma função para chamar no botão
 function verificarChute() {
-  console.log("o botão foi clicado");
+  //pegar a função, não exibir
+  let chute = document.querySelector("input").value; //para pegar apenas o valor do campo;
+  console.log(chute == numeroSecreto);
 }
 
 //função que não tem parametro e tem retorno
