@@ -1,3 +1,4 @@
+let listaDeNumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -41,7 +42,15 @@ function verificarChute() {
 
 //função que não tem parametro e tem retorno
 function gerarNumeroAleatorio() {
-  return parseInt(Math.random() * 10 + 1);
+  let numeroEscolhido = parseInt(Math.random() * 4 + 1);
+
+  if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+    return gerarNumeroAleatorio();
+  } else {
+    listaDeNumerosSorteados.push(numeroEscolhido); //push adiciona item ao final da lista
+    console.log(listaDeNumerosSorteados);
+    return numeroEscolhido;
+  }
 }
 
 function limparCampo() {
