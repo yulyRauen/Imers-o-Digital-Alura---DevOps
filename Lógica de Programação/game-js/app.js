@@ -6,8 +6,12 @@ function exibirTextoNaTela(tag, texto) {
   campo.innerHTML = texto;
 }
 
-exibirTextoNaTela("h1", "Jogo do número secreto"); //a primeira vez que chamar a função chama o h1 e a segunda chama o p
-exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
+function exibirMensagemInicial() {
+  exibirTextoNaTela("h1", "Jogo do número secreto"); //a primeira vez que chamar a função chama o h1 e a segunda chama o p
+  exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
+}
+
+exibirMensagemInicial(); //chamando a função pela primeira vez quando for lido a primeira vez o arquivo
 
 //criando uma função para chamar no botão
 function verificarChute() {
@@ -43,4 +47,12 @@ function gerarNumeroAleatorio() {
 function limparCampo() {
   chute = document.querySelector("input");
   customElements.value = " ";
+}
+
+function reiniciarJogo() {
+  numeroSecreto = gerarNumeroAleatorio();
+  limparCampo();
+  tentativas = 1;
+  exibirMensagemInicial();
+  document.getElementById("reiniciar").setAttribute("disabled", true);
 }
